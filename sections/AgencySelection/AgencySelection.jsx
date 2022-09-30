@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { theme } from "~/styles";
 
 import {
   StyledContainer,
@@ -16,9 +17,7 @@ import {
   StyledDescription,
   StyledVideoContainer,
   StyledCardContainer,
-  StyledLightCard,
-  StyledMiddleCard,
-  StyledHeavyCard,
+  StyledCard,
   StyledContentWrapperContainer,
 } from "./elements";
 
@@ -44,6 +43,39 @@ const pitch = {
   alt: "pitch",
 };
 
+const cardSize = {
+  small: 32.5,
+  medium: 35,
+  big: 37.5,
+};
+
+const cardBackGroundColor = {
+  light: theme.grayF8,
+  medium: theme.grayF0,
+  dark: theme.grayE2,
+};
+
+const contentFirstCard = {
+  title: "Brief",
+  bold: " brief writing or simple guidance ",
+  descr1: "Complete",
+  descr2: "on what to include, we`ve got you covered.",
+};
+
+const contentSecondCard = {
+  title: "Search",
+  bold: " criteria matching ",
+  descr1: "In-depth agency search covering,",
+  descr2: "door knocking and due-dilligence vetting",
+};
+
+const contentThirdCard = {
+  title: "Pitch",
+  bold: " pitch management, ",
+  descr1: "Comprehensive",
+  descr2: "including comms, diary management and pitch hosting",
+};
+
 const iconWidth = 160;
 const iconHeight = 160;
 
@@ -59,7 +91,6 @@ export const AgencySelection = ({ image, title, description, ...props }) => {
           <StyledContentWrapperContainer>
             <StyledSectionContainer>
               <StyledVideoContainer>
-                {/** ToDo: Own Image Container Component */}
                 <Image
                   layout="responsive"
                   src={videoPNG.src}
@@ -71,7 +102,12 @@ export const AgencySelection = ({ image, title, description, ...props }) => {
               </StyledVideoContainer>
             </StyledSectionContainer>
             <StyledCardContainer>
-              <StyledLightCard>
+
+
+              <StyledCard
+                size={cardSize.small}
+                bgColor={cardBackGroundColor.light}
+              >
                 <StyledCardLogoContainer>
                   <Image
                     src={brief.src}
@@ -81,17 +117,22 @@ export const AgencySelection = ({ image, title, description, ...props }) => {
                   />
                 </StyledCardLogoContainer>
                 <StyledCardTextContainer>
-                  <StyledCardTitle>Brief</StyledCardTitle>
+                  <StyledCardTitle>{contentFirstCard.title}</StyledCardTitle>
                   <StyledCardDescription>
-                    Complete{" "}
+                    {contentFirstCard.descr1}
                     <StyledCardBoldText>
-                      brief writing or simple guidance
-                    </StyledCardBoldText>{" "}
-                    on what to include, we&lsquo;ve got you covered
+                      {contentFirstCard.bold}
+                    </StyledCardBoldText>
+                    {contentFirstCard.descr2}
                   </StyledCardDescription>
                 </StyledCardTextContainer>
-              </StyledLightCard>
-              <StyledMiddleCard>
+              </StyledCard>
+
+
+              <StyledCard
+                size={cardSize.medium}
+                bgColor={cardBackGroundColor.medium}
+              >
                 <StyledCardLogoContainer>
                   <Image
                     src={search.src}
@@ -101,15 +142,22 @@ export const AgencySelection = ({ image, title, description, ...props }) => {
                   />
                 </StyledCardLogoContainer>
                 <StyledCardTextContainer>
-                  <StyledCardTitle>Search</StyledCardTitle>
+                  <StyledCardTitle>{contentSecondCard.title}</StyledCardTitle>
                   <StyledCardDescription>
-                    In-depth agency search covering,{" "}
-                    <StyledCardBoldText>criteria matching</StyledCardBoldText>,
-                    door knocking and due-dilligence vetting
+                    {contentSecondCard.descr1}
+                    <StyledCardBoldText>
+                      {contentSecondCard.bold}
+                    </StyledCardBoldText>
+                    {contentSecondCard.descr2}
                   </StyledCardDescription>
                 </StyledCardTextContainer>
-              </StyledMiddleCard>
-              <StyledHeavyCard>
+              </StyledCard>
+
+
+              <StyledCard
+                size={cardSize.big}
+                bgColor={cardBackGroundColor.dark}
+              >
                 <StyledCardLogoContainer>
                   <Image
                     src={pitch.src}
@@ -119,14 +167,16 @@ export const AgencySelection = ({ image, title, description, ...props }) => {
                   />
                 </StyledCardLogoContainer>
                 <StyledCardTextContainer>
-                  <StyledCardTitle>Pitch</StyledCardTitle>
+                  <StyledCardTitle>{contentThirdCard.title}</StyledCardTitle>
                   <StyledCardDescription>
-                    Comprehensive{" "}
-                    <StyledCardBoldText>pitch management</StyledCardBoldText>,
-                    including comms, diary management and pitch hosting
+                    {contentThirdCard.descr1}
+                    <StyledCardBoldText>
+                      {contentThirdCard.bold}
+                    </StyledCardBoldText>
+                    {contentThirdCard.descr2}
                   </StyledCardDescription>
                 </StyledCardTextContainer>
-              </StyledHeavyCard>
+              </StyledCard>
             </StyledCardContainer>
           </StyledContentWrapperContainer>
         </StyledBackgroundImgContainer>

@@ -1,5 +1,4 @@
-export * from "./LightContentCard";
-export * from "./MiddleContentCard";
-export * from "./HeavyContentCard";
+export * from "./ContentCard";
+
 
 

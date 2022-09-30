@@ -1,58 +1,29 @@
 import styled from "styled-components";
-import { theme } from "~/styles";
 
-export const StyledCardLight = styled(({ ...props }) => <div {...props} />)`
-  width: 32.5rem;
+export const StyledCard = styled(({ ...props }) => <div {...props} />)`
+  width: ${props => props.size}rem;
   height: 10rem;
-  background-color: ${theme.grayF8};
+  background-color: ${props => props.bgColor};
+  padding: 3px;
   border-radius: 10px;
+  border: solid 3px transparent;
   display: flex;
   box-sizing: border-box;
+  & label {
+    padding: 3px;
+  }
 
   &:hover {
     border: solid ${({ theme }) => theme.main} 3px;
     cursor: pointer;
+
+
     & label {
       color: ${({ theme }) => theme.main};
       cursor: pointer;
       text-decoration: underline;
+
     }
   }
 `;
 
-export const StyledCardMiddle = styled(({ ...props }) => <div {...props} />)`
-  width: 35rem;
-  height: 10rem;
-  background-color: ${theme.grayF0};
-  border-radius: 10px;
-  display: flex;
-  box-sizing: border-box;
-
-  &:hover {
-    border: solid ${({ theme }) => theme.main} 3px;
-    cursor: pointer;
-    & label {
-      color: ${({ theme }) => theme.main};
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  }
-`;
-export const StyledCardHeavy = styled(({ ...props }) => <div {...props} />)`
-  width: 37.5rem;
-  height: 10rem;
-  background-color: ${theme.grayE2};
-  border-radius: 10px;
-  display: flex;
-  box-sizing: border-box;
-
-  &:hover {
-    border: solid ${({ theme }) => theme.main} 3px;
-    cursor: pointer;
-    & label {
-      color: ${({ theme }) => theme.main};
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  }
-`;

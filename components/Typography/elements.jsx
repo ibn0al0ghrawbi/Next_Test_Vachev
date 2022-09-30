@@ -61,7 +61,6 @@ export const StyledCardHeading = styled((props) => <label {...props} />)`
   line-height: 1.7rem;
   font-weight: 600;
   display: inline-block; //bcs <label> is display: inline by default
-  margin-top: 2rem;
 `;
 
 export const StyledCardDescription = styled((props) => <p {...props} />)`
@@ -78,5 +77,4 @@ export const StyledCardBoldText = styled((props) => <div {...props} />)`
   font-weight: 600;
   margin: auto;
   display: inline;
-
 `;

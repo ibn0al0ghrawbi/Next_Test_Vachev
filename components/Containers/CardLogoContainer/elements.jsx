@@ -6,4 +6,5 @@ export const StyledCardLogoContainer = styled(({ ...props }) => (
   margin: auto;
   margin-right: 3.2rem;
   margin-left: 3.2rem;
+
 `;

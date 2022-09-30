@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  LightContentCard,
-  MiddleContentCard,
-  HeavyContentCard,
-} from "~/collections";
+import { ContentCard } from "~/collections";
 
 import {
   SectionContainer,
@@ -51,7 +47,7 @@ export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
 `;
 
 export const StyledCardTitle = styled((props) => <CardHeading {...props} />)`
-  margin: 1rem 0 0 0;
+  margin: 0.5rem 0 0 0;
   color: black;
 `;
 
@@ -114,20 +110,13 @@ export const StyledCardContainer = styled(({ ...props }) => (
   }
 `;
 
-export const StyledLightCard = styled(({ ...props }) => (
-  <LightContentCard {...props} />
+export const StyledCard = styled(({ ...props }) => (
+  <ContentCard {...props} />
 ))``;
 
-export const StyledMiddleCard = styled(({ ...props }) => (
-  <MiddleContentCard {...props} />
-))``;
-
-export const StyledHeavyCard = styled(({ ...props }) => (
-  <HeavyContentCard {...props} />
-))``;
-
-export const StyledContentWrapperContainer = styled(({ ...props }) => <ContentWrapperContainer {...props} />)`
-
+export const StyledContentWrapperContainer = styled(({ ...props }) => (
+  <ContentWrapperContainer {...props} />
+))`
   @media only screen and (min-width: 1024px) {
     flex-direction: row;
     margin-left: 12rem;
@@ -136,15 +125,11 @@ export const StyledContentWrapperContainer = styled(({ ...props }) => <ContentWr
 
 export const StyledCardTextContainer = styled(({ ...props }) => (
   <CardTextContainer {...props} />
-))`
-  
-`;
+))``;
 
 export const StyledCardLogoContainer = styled(({ ...props }) => (
   <CardLogoContainer {...props} />
-))`
- 
-`;
+))``;
 
 export const StyledCardBoldText = styled(({ ...props }) => (
   <CardBoldText {...props} />
